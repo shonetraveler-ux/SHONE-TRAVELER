@@ -1,0 +1,17 @@
+.tour-page-recs { max-width:1100px; margin:28px auto; padding:18px; display:flex; flex-direction:column; gap:22px; }
+.rec-block { background:#fff; border-radius:10px; padding:14px; box-shadow:0 8px 20px rgba(11,94,215,0.04); }
+.rec-block h3 { margin:0 0 12px 0; color:#0b5ed7; }
+.rec-grid-small { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
+.empty { padding:18px; color:#51607a; }
+
+.addons { display:flex; flex-direction:column; gap:12px; }
+.addons-list { display:flex; flex-direction:column; gap:10px; }
+.addon-item { display:flex; justify-content:space-between; align-items:center; padding:10px; border-radius:8px; background: #fbfdff; border:1px solid rgba(11,94,215,0.04); }
+.addon-title { font-weight:600; }
+.addon-desc { font-size:13px; color:#51607a; }
+.addon-actions { display:flex; gap:8px; align-items:center; }
+.addon-price { color:#0b5ed7; font-weight:700; margin-right:6px; }
+.btn.small { padding:6px 8px; border-radius:6px; }
+
+@media (max-width:1000px) { .rec-grid-small { grid-template-columns: repeat(2,1fr); } }
+@media (max-width:600px) { .rec-grid-small { grid-template-columns: 1fr; } .tour-page-recs { padding:12px; } }
