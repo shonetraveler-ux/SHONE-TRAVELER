@@ -21,6 +21,7 @@ import TrendingSection from './components/recommendations/TrendingSection';
 import { RecommendationProvider } from './context/RecommendationContext';
 import Success from './components/Success';
 import Cancel from './components/Cancel';
+import BookingPage from './components/BookingPage';
 
 const stripePromise = loadStripe('pk_test_...'); // Replace with your publishable key
 
@@ -52,6 +53,14 @@ function App() {
     return (
       <Elements stripe={stripePromise}>
         <Cancel />
+      </Elements>
+    );
+  }
+
+  if (pathname === '/booking') {
+    return (
+      <Elements stripe={stripePromise}>
+        <BookingPage />
       </Elements>
     );
   }

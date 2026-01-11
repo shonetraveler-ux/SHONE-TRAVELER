@@ -93,12 +93,12 @@ const transporter = nodemailer.createTransport({
 });
 
 // Function to send confirmation email
-const sendConfirmationEmail = (email, tourName) => {
+const sendConfirmationEmail = (email, tourName, amount) => {
   const mailOptions = {
     from: 'yourgmail@gmail.com',
     to: email,
     subject: 'Booking Confirmation - Shone Traveler',
-    text: `Dear Customer,\n\nThank you for booking ${tourName} with Shone Traveler.\nYour payment was successful!\n\nBest regards,\nShone Traveler Team`
+    text: `Dear Customer,\n\nThank you for booking ${tourName} with Shone Traveler.\nYour payment of $${amount} was successful!\n\nBooking Details:\n- Tour: ${tourName}\n- Amount Paid: $${amount}\n\nBest regards,\nShone Traveler Team`
   };
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
@@ -564,8 +564,8 @@ app.post('/api/create-payment-intent', authenticateToken, async (req, res) => {
 });
 
 app.post('/api/send-email', (req, res) => {
-  const { email, tourName } = req.body;
-  sendConfirmationEmail(email, tourName);
+  const { email, tourName, amount } = req.body;
+  sendConfirmationEmail(email, tourName, amount);
   res.json({ message: 'Email sent successfully' });
 });
 

@@ -59,10 +59,10 @@ export default function TourCard({ tour }) {
   };
 
   const handleLoginSuccess = async (user) => {
-    // For demo purposes, skip API calls and show payment form
-    alert('Login successful, showing payment form');
-    setShowModal(false);
-    setShowPayment(true);
+    // Store selected tour
+    localStorage.setItem('selectedTour', JSON.stringify(tour));
+    // Navigate to booking page
+    window.location.href = '/booking';
   };
 
   return (
