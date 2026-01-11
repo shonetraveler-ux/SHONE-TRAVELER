@@ -13,6 +13,7 @@ const Chatbot = () => {
   const [input, setInput] = useState('');
   const [lastIntent, setLastIntent] = useState('none');
   const [expandedExplanations, setExpandedExplanations] = useState(new Set());
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     // Load chat history
@@ -27,6 +28,15 @@ const Chatbot = () => {
       })
       .catch(err => console.error('Error loading history:', err));
   }, []);
+
+  const clearMessages = async () => {
+    setMessages([]);
+    try {
+      await fetch('/api/chat/history', { method: 'DELETE' });
+    } catch (err) {
+      console.error('Error clearing history:', err);
+    }
+  };
 
   const toggleExplanation = (index) => {
     setExpandedExplanations(prev => {
@@ -75,37 +85,50 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="chatbot">
-      <div className="chat-window">
-        {messages.map((msg, index) => (
-          <div key={index} className={`message ${msg.sender}`}>
-            {msg.text}
-            {msg.sender === 'bot' && msg.explanation && (
-              <div>
-                <button onClick={() => toggleExplanation(index)} className="explanation-toggle">
-                  {expandedExplanations.has(index) ? 'Hide' : 'Show'} Explanation
-                </button>
-                {expandedExplanations.has(index) && (
-                  <div className="explanation">
-                    {msg.explanation}
+    <>
+      {!isOpen && (
+        <div className="chatbot-icon" onClick={() => setIsOpen(true)}>
+          <img src={require('../assets/chatbot-icon.jpg')} alt="Chatbot" />
+        </div>
+      )}
+      {isOpen && (
+        <div className="chatbot">
+          <div className="chat-header">
+            <button onClick={clearMessages} className="clear-btn">Clear</button>
+            <button onClick={() => setIsOpen(false)} className="close-btn">×</button>
+          </div>
+          <div className="chat-window">
+            {messages.map((msg, index) => (
+              <div key={index} className={`message ${msg.sender}`}>
+                {msg.text}
+                {msg.sender === 'bot' && msg.explanation && (
+                  <div>
+                    <button onClick={() => toggleExplanation(index)} className="explanation-toggle">
+                      {expandedExplanations.has(index) ? 'Hide' : 'Show'} Explanation
+                    </button>
+                    {expandedExplanations.has(index) && (
+                      <div className="explanation">
+                        {msg.explanation}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
-            )}
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="input-area">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
-          placeholder="Type your message..."
-        />
-        <button onClick={sendMessage}>Send</button>
-      </div>
-    </div>
+          <div className="input-area">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+              placeholder="Type your message..."
+            />
+            <button onClick={sendMessage}>Send</button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

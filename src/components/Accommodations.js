@@ -5,19 +5,19 @@ const Accommodations = () => {
   const accommodations = [
     {
       image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      name: 'Jetwing Saman Villas',
+      name: 'SHONE Saman Villas',
       location: 'Bentota',
       description: 'Where restful pleasures await'
     },
     {
       image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      name: 'Jetwing Vil Uyana',
+      name: 'SHONE Vil Uyana',
       location: 'Sigiriya',
       description: 'A unique eco-luxury experience'
     },
     {
       image: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      name: 'Jetwing Blue',
+      name: 'SHONE Blue',
       location: 'Negombo',
       description: 'Beachfront luxury and relaxation'
     }

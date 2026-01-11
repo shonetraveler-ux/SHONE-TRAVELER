@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Tourism Chatbot Demo</title>
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <div class="demo-container">
+        <header>
+            <h1>Sri Lanka Tourism Website</h1>
+            <p>Experience the paradise island with our AI assistant</p>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Welcome to Sri Lanka</h2>
+                <p>Discover ancient temples, pristine beaches, wildlife safaris, and hill country adventures.</p>
+            </section>
+
+            <section class="features">
+                <div class="feature">
+                    <h3>🏛️ Cultural Sites</h3>
+                    <p>Explore UNESCO World Heritage sites like Sigiriya and Polonnaruwa</p>
+                </div>
+                <div class="feature">
+                    <h3>🏖️ Beach Resorts</h3>
+                    <p>Relax on beautiful beaches in Mirissa and Arugam Bay</p>
+                </div>
+                <div class="feature">
+                    <h3>🦌 Wildlife Safaris</h3>
+                    <p>Spot leopards and elephants in Yala National Park</p>
+                </div>
+                <div class="feature">
+                    <h3>🏔️ Hill Country</h3>
+                    <p>Visit tea plantations and waterfalls in Ella and Nuwara Eliya</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Chatbot will be injected here by chatbot.js -->
+    </div>
+
+    <!-- Load Tau Prolog library -->
+    <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.4/modules/core.min.js"></script>
+
+    <!-- Load chatbot script -->
+    <script src="chatbot.js"></script>
+
+    <script>
+        // Demo functionality - you can remove this in production
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Sri Lanka Tourism Chatbot Demo Loaded');
+
+            // Add some demo interactions
+            setTimeout(() => {
+                if (window.tourismChatbot) {
+                    console.log('Chatbot is ready!');
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

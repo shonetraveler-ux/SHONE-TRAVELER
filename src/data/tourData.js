@@ -9,7 +9,8 @@ const tours = [
     travelStyle: ['couple', 'honeymoon'],
     bestSeason: 'dry',
     popularityScore: 88,
-    tags: ['beach', 'relaxation', 'spa']
+    tags: ['beach', 'relaxation', 'spa'],
+    image: '/images/unawatuna.jpg'
   },
   {
     id: 'T002',
@@ -20,7 +21,8 @@ const tours = [
     travelStyle: ['solo', 'group'],
     bestSeason: 'any',
     popularityScore: 72,
-    tags: ['city', 'history', 'food']
+    tags: ['city', 'history', 'food'],
+    image: '/images/perahara.jpg'
   },
   {
     id: 'T003',
@@ -31,7 +33,8 @@ const tours = [
     travelStyle: ['family', 'group'],
     bestSeason: 'dry',
     popularityScore: 94,
-    tags: ['safari', 'animals', 'nature']
+    tags: ['safari', 'animals', 'nature'],
+    image: '/images/jala.jpg'
   },
   {
     id: 'T004',
@@ -42,7 +45,8 @@ const tours = [
     travelStyle: ['solo', 'couple'],
     bestSeason: 'festive',
     popularityScore: 65,
-    tags: ['food', 'local', 'market']
+    tags: ['food', 'local', 'market'],
+    image: '/images/authentic-ceylon.jpg'
   },
   {
     id: 'T005',
@@ -53,7 +57,8 @@ const tours = [
     travelStyle: ['solo', 'group'],
     bestSeason: 'dry',
     popularityScore: 80,
-    tags: ['hiking', 'camping']
+    tags: ['hiking', 'camping'],
+    image: '/images/advencher.jpg'
   },
   {
     id: 'T006',
@@ -64,7 +69,8 @@ const tours = [
     travelStyle: ['family', 'couple'],
     bestSeason: 'dry',
     popularityScore: 90,
-    tags: ['island', 'boat', 'resort']
+    tags: ['island', 'boat', 'resort'],
+    image: '/images/unavatuna.jpg'
   },
   {
     id: 'T007',
@@ -75,7 +81,8 @@ const tours = [
     travelStyle: ['family'],
     bestSeason: 'any',
     popularityScore: 70,
-    tags: ['kids', 'activities']
+    tags: ['kids', 'activities'],
+    image: '/images/unawatuna.jpg'
   },
   {
     id: 'T008',
@@ -86,7 +93,8 @@ const tours = [
     travelStyle: ['solo', 'group'],
     bestSeason: 'festive',
     popularityScore: 60,
-    tags: ['temples', 'history']
+    tags: ['temples', 'history'],
+    image: '/images/sigiriya.jpeg'
   },
   {
     id: 'T009',
@@ -97,7 +105,8 @@ const tours = [
     travelStyle: ['couple'],
     bestSeason: 'any',
     popularityScore: 85,
-    tags: ['nature', 'romantic']
+    tags: ['nature', 'romantic'],
+    image: '/images/ella.jpg'
   },
   {
     id: 'T010',
@@ -108,7 +117,8 @@ const tours = [
     travelStyle: ['solo', 'group'],
     bestSeason: 'dry',
     popularityScore: 55,
-    tags: ['village', 'culinary']
+    tags: ['village', 'culinary'],
+    image: '/images/authentic-ceylon.jpg'
   },
   {
     id: 'T011',
@@ -119,7 +129,8 @@ const tours = [
     travelStyle: ['solo', 'group'],
     bestSeason: 'dry',
     popularityScore: 77,
-    tags: ['surf', 'dive', 'adrenaline']
+    tags: ['surf', 'dive', 'adrenaline'],
+    image: '/images/unawatuna.jpg'
   },
   {
     id: 'T012',
@@ -130,7 +141,8 @@ const tours = [
     travelStyle: ['group', 'family'],
     bestSeason: 'festive',
     popularityScore: 68,
-    tags: ['festival', 'local']
+    tags: ['festival', 'local'],
+    image: '/images/perahara.jpg'
   }
 ];
 
